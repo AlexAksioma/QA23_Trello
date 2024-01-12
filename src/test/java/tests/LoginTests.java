@@ -1,13 +1,25 @@
 package tests;
 
+import models.UserDTO;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LoginTests extends TestBase{
+public class LoginTests extends TestBase {
 
     @Test
-    public void loginPositiveTest(){
-        app.getHelperUser().login("aksiomamedved@gmail.com","AlexMed123!");
+    public void loginPositiveTest() {
+        app.getHelperUser().login("aksiomamedved@gmail.com", "AlexMed123!");
+        Assert.assertTrue(app.getHelperUser().isElementPresent_buttonAccount());
+        //System.out.println("start test");
+    }
+
+    @Test
+    public void loginPositiveTestDTO() {
+        UserDTO user = UserDTO.builder()
+                .email("aksiomamedved@gmail.com")
+                .password("AlexMed123!")
+                .build();
+        app.getHelperUser().loginDTO(user);
         Assert.assertTrue(app.getHelperUser().isElementPresent_buttonAccount());
         //System.out.println("start test");
     }
