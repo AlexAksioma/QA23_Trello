@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35a44edd-e4fa-4554-9802-39608f4a4f82" name="Changes" comment="added dto, addNewBoard">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperBoards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperBoards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BoardTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="35a44edd-e4fa-4554-9802-39608f4a4f82" name="Changes" comment="added deleteBoard + after method" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -228,13 +224,22 @@
       <option name="project" value="LOCAL" />
       <updated>1705053484472</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added deleteBoard + after method">
+      <option name="closed" value="true" />
+      <created>1705427752088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705427752088</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added manager, tests" />
     <MESSAGE value="added login test, classes BoardTests" />
     <MESSAGE value="added dto, addNewBoard" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dto, addNewBoard" />
+    <MESSAGE value="added deleteBoard + after method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added deleteBoard + after method" />
   </component>
 </project>

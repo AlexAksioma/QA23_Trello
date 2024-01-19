@@ -20,6 +20,7 @@ public class LoginTests extends TestBase {
                 .password("AlexMed123!")
                 .build();
         app.getHelperUser().loginDTO(user);
+        app.getHelperUser().takeScreenShot();
         Assert.assertTrue(app.getHelperUser().isElementPresent_buttonAccount());
         //System.out.println("start test");
     }
