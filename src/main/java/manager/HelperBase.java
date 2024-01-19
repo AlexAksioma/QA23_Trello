@@ -16,6 +16,7 @@ public class HelperBase {
     public HelperBase(WebDriver driver) {
         this.driver = driver;
     }
+    By buttonAccount = By.xpath("//button[@data-testid='header-member-menu-button']");
 
     private WebElement findElementBase(By locator){
         return driver.findElement(locator);

@@ -13,10 +13,7 @@ public class BoardTests extends TestBase {
 
     @BeforeClass
     public void login() {  //"aksiomamedved@gmail.com","AlexMed123!"
-        app.getHelperUser().loginDTO(UserDTO.builder()
-                .email("aksiomamedved@gmail.com")
-                .password("AlexMed123!")
-                .build());
+        app.getHelperUser().loginDTO(user);
     }
 
     @Test

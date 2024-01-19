@@ -14,7 +14,7 @@ public class HelperUser extends HelperBase {
     By buttonContinue = By.id("login-submit");
     By inputPassword = By.id("password");
     By buttonLoginSubmit = By.id("login-submit");
-    By buttonAccount = By.xpath("//button[@data-testid='header-member-menu-button']");
+    //By buttonAccount = By.xpath("//button[@data-testid='header-member-menu-button']");
 
     public void login(String email, String password) {
         clickBase(buttonLogin);
