@@ -4,6 +4,8 @@ import models.UserDTO;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
+
 public class LoginTests extends TestBase {
 
     @Test
@@ -14,11 +16,13 @@ public class LoginTests extends TestBase {
     }
 
     @Test
-    public void loginPositiveTestDTO() {
+    public void loginPositiveTestDTO(Method method) {
         UserDTO user = UserDTO.builder()
                 .email("aksiomamedved@gmail.com")
                 .password("AlexMed123!")
                 .build();
+        logger.info("start method " + method.getName()
+                + " with email --> " + user.getEmail() + " password --> " + user.getPassword());
         app.getHelperUser().loginDTO(user);
         app.getHelperUser().takeScreenShot();
         Assert.assertTrue(app.getHelperUser().isElementPresent_buttonAccount());

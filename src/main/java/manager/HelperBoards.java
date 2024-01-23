@@ -3,6 +3,9 @@ package manager;
 import models.BoardDTO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class HelperBoards extends HelperBase {
     public HelperBoards(WebDriver driver) {
@@ -28,6 +31,15 @@ public class HelperBoards extends HelperBase {
 
     By deleteMessage = By.cssSelector("div[id='FlagGroup']");
     By deleteMessageText = By.xpath("//span[text()='Board deleted.']");
+    //=======================================================
+
+    By listBoard = By.xpath("//ul[@class='boards-page-board-section-list']/li");
+    public void deleteElementList(){
+        //pause(3);
+        List<WebElement> listElements = driver.findElements(listBoard);
+        System.out.println("size --> "+listElements.size());
+        System.out.println(driver.findElement(listBoard).getTagName());
+    }
 
     public void createNewBoard(BoardDTO board) {
         clickBase(buttonCreateNewBoard);
