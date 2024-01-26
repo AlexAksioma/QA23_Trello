@@ -2,9 +2,11 @@ package tests;
 
 import models.UserDTO;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
+
 
 public class LoginTests extends TestBase {
 
@@ -24,7 +26,7 @@ public class LoginTests extends TestBase {
         logger.info("start method " + method.getName()
                 + " with email --> " + user.getEmail() + " password --> " + user.getPassword());
         app.getHelperUser().loginDTO(user);
-        app.getHelperUser().takeScreenShot();
+        //app.getHelperUser().takeScreenShot();
         Assert.assertTrue(app.getHelperUser().isElementPresent_buttonAccount());
         //System.out.println("start test");
     }

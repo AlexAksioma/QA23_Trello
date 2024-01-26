@@ -10,8 +10,9 @@ public class HelperUser extends HelperBase {
     }
 
     By buttonLogin = By.xpath("//a[@data-uuid='MJFtCCgVhXrVl7v9HA7EH_login']");
-    By inputLogin = By.id("username");
-    By buttonContinue = By.id("login-submit");
+    By inputLogin = By.xpath("//input[@placeholder='Enter your email']");
+    // By inputLogin = By.id("username");  //username
+    By buttonContinue = By.id("login-submit1");
     By inputPassword = By.id("password");
     By buttonLoginSubmit = By.id("login-submit");
     //By buttonAccount = By.xpath("//button[@data-testid='header-member-menu-button']");
