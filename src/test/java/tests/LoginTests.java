@@ -1,5 +1,6 @@
 package tests;
 
+import manager.TestNGListener;
 import models.UserDTO;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -7,6 +8,7 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
+@Listeners(TestNGListener.class)
 
 public class LoginTests extends TestBase {
 
@@ -23,7 +25,7 @@ public class LoginTests extends TestBase {
                 .email("aksiomamedved@gmail.com")
                 .password("AlexMed123!")
                 .build();
-        logger.info("start method " + method.getName()
+        logger.info("method " + method.getName()
                 + " with email --> " + user.getEmail() + " password --> " + user.getPassword());
         app.getHelperUser().loginDTO(user);
         //app.getHelperUser().takeScreenShot();

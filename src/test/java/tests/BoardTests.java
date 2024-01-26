@@ -1,14 +1,17 @@
 package tests;
 
+import manager.TestNGListener;
 import models.BoardDTO;
 import models.UserDTO;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 import java.util.Random;
+@Listeners(TestNGListener.class)
 
 public class BoardTests extends TestBase {
 
