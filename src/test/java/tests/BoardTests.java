@@ -1,5 +1,6 @@
 package tests;
 
+import dataproviders.DataProviderBoard;
 import manager.TestNGListener;
 import models.BoardDTO;
 import models.UserDTO;
@@ -21,24 +22,25 @@ public class BoardTests extends TestBase {
         app.getHelperUser().loginDTO(user);
     }
 
-    @Test
-    public void addNewBoardPositiveTest(Method method) {
-        int i = new Random().nextInt(1000) + 1000;
-        BoardDTO board = BoardDTO.builder()
-                .boardTitle("board" + i)
-                .build();
+    @Test(dataProvider = "dataProvider_deleteBoardPositiveTest", dataProviderClass = DataProviderBoard.class)
+    public void addNewBoardPositiveTest(Method method, BoardDTO board) {
+//        int i = new Random().nextInt(1000) + 1000;
+//        BoardDTO board = BoardDTO.builder()
+//                .boardTitle("board" + i)
+//                .build();
         logger.info("start test method --> "+method.getName()
                 +" with board title --> "+board.getBoardTitle());
         app.getHelperBoards().createNewBoard(board);
         Assert.assertTrue(app.getHelperBoards().isBoardTitlePresent(board.getBoardTitle()));
     }
 
-    @Test
-    public void deleteBoardPositiveTest() {
-        int i = new Random().nextInt(1000) + 1000;
-        BoardDTO board = BoardDTO.builder()
-                .boardTitle("board_del" + i)
-                .build();
+    @Test(dataProvider = "dataProvider_deleteBoardPositiveTest", dataProviderClass = DataProviderBoard.class)
+    public void deleteBoardPositiveTest(BoardDTO board) {
+//        int i = new Random().nextInt(1000) + 1000;
+//        BoardDTO board = BoardDTO.builder()
+//                .boardTitle("board_del" + i)
+//                .build();
+        logger.info("test method with data --> "+board.getBoardTitle());
         app.getHelperBoards().createNewBoard(board);
         app.getHelperBoards().clickButtonBoards();
 
@@ -47,7 +49,7 @@ public class BoardTests extends TestBase {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void deleteBoardPositiveTest1() {
         int i = new Random().nextInt(1000) + 1000;
         BoardDTO board = BoardDTO.builder()

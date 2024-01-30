@@ -34,11 +34,25 @@ public class HelperBoards extends HelperBase {
     //=======================================================
 
     By listBoard = By.xpath("//ul[@class='boards-page-board-section-list']/li");
-    public void deleteElementList(){
-        //pause(3);
+    //boards-page-board-section-list
+    By secondElementListBoard =
+            By.xpath("//ul[@class='boards-page-board-section-list']/li[2]");
+
+    public void deleteElementList() {
         List<WebElement> listElements = driver.findElements(listBoard);
-        System.out.println("size --> "+listElements.size());
+        System.out.println("size --> " + listElements.size());
         System.out.println(driver.findElement(listBoard).getTagName());
+        for (int i = 0; i < listElements.size(); i++) {
+            WebElement element = driver.findElement(secondElementListBoard);
+            if (element.getAttribute("data-testid") == null) {
+                element.click();
+                clickBaseWait(buttonDots, 5);
+                clickBaseWait(buttonCloseBoard, 5);
+                clickBaseWait(buttonCloseConfirm, 5);
+                clickBaseWait(buttonDeleteBoard, 5);
+                clickBaseWait(buttonDeleteConfirm, 5);
+            }
+        }
     }
 
     public void createNewBoard(BoardDTO board) {
@@ -75,7 +89,8 @@ public class HelperBoards extends HelperBase {
     public boolean isDeleteMessagePresent() {
         return isTextInElementEquals(deleteMessage, "Board deleted.");
     }
-    public boolean isTextMessagePresentByText(){
+
+    public boolean isTextMessagePresentByText() {
         return isElementPresent(deleteMessageText);
     }
 

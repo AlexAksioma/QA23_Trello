@@ -4,6 +4,8 @@ import org.openqa.selenium.*;
 
 
 import com.google.common.io.Files;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,45 +17,57 @@ import java.util.List;
 
 public class HelperBase {
     WebDriver driver;
-    Logger logger= LoggerFactory.getLogger(HelperBase.class);
+    Logger logger = LoggerFactory.getLogger(HelperBase.class);
+
     public HelperBase(WebDriver driver) {
         this.driver = driver;
     }
+
     By buttonAccount = By.xpath("//button[@data-testid='header-member-menu-button']");
 
-    private WebElement findElementBase(By locator){
+    private WebElement findElementBase(By locator) {
         return driver.findElement(locator);
     }
 
-    private List<WebElement> findElementsBase(By locator){
+    private List<WebElement> findElementsBase(By locator) {
         return driver.findElements(locator);
     }
-    public void pause(int time){
+
+    public void pause(int time) {
         try {
-            Thread.sleep(time* 1000L);
+            Thread.sleep(time * 1000L);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void clickBase(By locator){
+    public void clickBase(By locator) {
         WebElement element = findElementBase(locator);
         element.click();
     }
 
-    public void typeBase(By locator, String text){
+    public void clickBaseWait(By locator, int time) {
+        WebDriverWait wait = new WebDriverWait(driver, time);
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void typeBase(By locator, String text) {
         WebElement element = findElementBase(locator);
         element.click();
         element.clear();
         element.sendKeys(text);
     }
 
-    public boolean isElementPresent(By locator){
+    public boolean isElementPresent(By locator) {
         return !driver.findElements(locator).isEmpty();
         //return driver.findElements(locator).size()>0;
     }
 
-    public boolean isTextInElementEquals(By locator, String text){
+    public boolean isTextInElementEquals(By locator, String text) {
         WebElement element = findElementBase(locator);
         return element.getText().equals(text);
     }

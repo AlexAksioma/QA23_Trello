@@ -2,7 +2,9 @@ package manager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +18,9 @@ public class HelperProfile extends HelperBase{
     By buttonProfilePhoto = By.xpath("//div[@data-test-selector='profile-hover-info']");
 
     By buttonChangeProfilePhoto = By.xpath("//button[@data-testid='change-avatar']");
-    By buttonUploadPhoto = By.xpath("//button[@data-testid='upload-button']");
+    By buttonUploadPhoto = By.xpath("//input[@id='image-input']");
+
+    By buttonUpload = By.xpath("//button[@type='submit']");
 
     public void changeAvatar() {
         clickBase(buttonAccount);
@@ -29,6 +33,11 @@ public class HelperProfile extends HelperBase{
         pause(5);
         clickBase(buttonProfilePhoto);
         clickBase(buttonChangeProfilePhoto);
+        File file = new File("src/test/resources/qa_blue.jpg");
+        String path = file.getAbsolutePath();
+        WebElement element  = driver.findElement(buttonUploadPhoto);
+        element.sendKeys(path);
+        clickBase(buttonUpload);
 
     }
 }
