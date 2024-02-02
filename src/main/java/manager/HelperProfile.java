@@ -19,8 +19,9 @@ public class HelperProfile extends HelperBase{
 
     By buttonChangeProfilePhoto = By.xpath("//button[@data-testid='change-avatar']");
     By buttonUploadPhoto = By.xpath("//input[@id='image-input']");
-
     By buttonUpload = By.xpath("//button[@type='submit']");
+    //=========================
+    By popUpAvatarAdded = By.xpath("//span[text()='Avatar added']");
 
     public void changeAvatar() {
         clickBase(buttonAccount);
@@ -36,8 +37,12 @@ public class HelperProfile extends HelperBase{
         File file = new File("src/test/resources/qa_blue.jpg");
         String path = file.getAbsolutePath();
         WebElement element  = driver.findElement(buttonUploadPhoto);
-        element.sendKeys(path);
+        element.sendKeys(path); //C:/.......
         clickBase(buttonUpload);
 
+    }
+
+    public boolean isTextInElementPresentByWait_AvatarAdded() {
+        return isTextInElementPresentByWait(popUpAvatarAdded, "Avatar added", 5);
     }
 }

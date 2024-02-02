@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35a44edd-e4fa-4554-9802-39608f4a4f82" name="Changes" comment="added TestNG listener">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dataproviders/DataProviderBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/qa_blue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/qa_yellow.png" afterDir="false" />
+    <list default="true" id="35a44edd-e4fa-4554-9802-39608f4a4f82" name="Changes" comment="added dataprovider, delete all board, change avatar">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/board_titles.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dataproviders/DataProviderBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dataproviders/DataProviderBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperBoards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperBoards.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/BoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BoardTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ProfileTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ProfileTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,8 +198,8 @@
       <list>
         <item itemvalue="Gradle.ProfileTests.changeAvatarPositiveTest" />
         <item itemvalue="Gradle.BoardTests.deleteAllBoards" />
-        <item itemvalue="Gradle.BoardTests.addNewBoardPositiveTest" />
         <item itemvalue="Gradle.BoardTests.deleteBoardPositiveTest" />
+        <item itemvalue="Gradle.BoardTests.addNewBoardPositiveTest" />
         <item itemvalue="Gradle.BoardTests" />
       </list>
     </recent_temporary>
@@ -286,8 +285,19 @@
       <option name="project" value="LOCAL" />
       <updated>1706262724276</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added dataprovider, delete all board, change avatar">
+      <option name="closed" value="true" />
+      <created>1706637631132</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706637631132</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added manager, tests" />
@@ -299,6 +309,7 @@
     <MESSAGE value="added logger" />
     <MESSAGE value="added WDListener (screenshot)" />
     <MESSAGE value="added TestNG listener" />
-    <option name="LAST_COMMIT_MESSAGE" value="added TestNG listener" />
+    <MESSAGE value="added dataprovider, delete all board, change avatar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dataprovider, delete all board, change avatar" />
   </component>
 </project>

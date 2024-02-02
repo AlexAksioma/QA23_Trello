@@ -72,6 +72,11 @@ public class HelperBase {
         return element.getText().equals(text);
     }
 
+    public boolean isTextInElementPresentByWait(By locator, String text, int time){
+        return new WebDriverWait(driver, time)
+                .until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
+    }
+
 //    public void takeScreenShot(){
 //        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 //        try {
