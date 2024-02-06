@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class BoardTests extends TestBase {
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void login() {  //"aksiomamedved@gmail.com","AlexMed123!"
         logger.info("start method before class --> with data -->" + user.getEmail() + " " + user.getPassword());
         app.getHelperUser().loginDTO(user);
@@ -35,7 +35,8 @@ public class BoardTests extends TestBase {
         Assert.assertTrue(app.getHelperBoards().isBoardTitlePresent(board.getBoardTitle()));
     }
 
-    @Test(dataProvider = "dataProvider_deleteBoardPositiveTestFile", dataProviderClass = DataProviderBoard.class)
+    @Test(groups = {"positive"},
+            dataProvider = "dataProvider_deleteBoardPositiveTestFile", dataProviderClass = DataProviderBoard.class)
     public void deleteBoardPositiveTest(BoardDTO board) {
 //        int i = new Random().nextInt(1000) + 1000;
 //        BoardDTO board = BoardDTO.builder()
@@ -69,7 +70,7 @@ public class BoardTests extends TestBase {
         app.getHelperBoards().deleteElementList();
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void afterMethod() {
         logger.info("start after method ");
         if (app.getHelperBoards().isElementPresent_buttonBoards())

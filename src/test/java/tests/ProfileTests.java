@@ -8,12 +8,13 @@ import org.testng.annotations.Test;
 @Listeners(TestNGListener.class)
 
 public class ProfileTests extends TestBase{
-    @BeforeClass
+
+    @BeforeClass(alwaysRun = true)
     public void login() {  //"aksiomamedved@gmail.com","AlexMed123!"
         app.getHelperUser().loginDTO(user);
     }
 
-    @Test
+    @Test(groups = {"positive", "smoke"})
     public void changeAvatarPositiveTest(){
         app.getHelperProfile().changeAvatar();
         Assert.assertTrue(app.getHelperProfile().isTextInElementPresentByWait_AvatarAdded());

@@ -15,13 +15,13 @@ public class TestBase {
             .password("AlexMed123!")
             .build();
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setup(){
         logger.info("start method BeforeSuite");
         app.init();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void tearDown(){
         logger.info("start method AfterSuite");
         //app.stop();
