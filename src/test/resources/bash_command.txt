@@ -1,2 +1,10 @@
 .\gradlew clean boardtests
 .\gradlew clean boardtests -Pbrowser=firefox
+
+.\gradlew clean positivetes
+
+.\gradlew clean shorttest
+.\gradlew clean shorttest -Dsuite=smoke
+.\gradlew clean shorttest -Dsuite=positive
+
+cd C:\QA_Auto_Projects\QA_23\QA23_Trello

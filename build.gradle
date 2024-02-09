@@ -40,3 +40,16 @@ task positivetests(type: Test) {
         suites 'src/test/resources/positivetest.xml'
     }
 }
+
+task shorttest(type: Test) {
+    useTestNG() {
+        def suite = System.getProperty('suite')
+        if (suite.equals('smoke')) {
+            suites 'src/test/resources/smoketest.xml'
+        } else if (suite.equals('positive')) {
+            suites 'src/test/resources/positivetest.xml'
+        } else {
+            suites 'src/test/resources/profiletests.xml'
+        }
+    }
+}

@@ -5,10 +5,7 @@ import manager.TestNGListener;
 import models.BoardDTO;
 import models.UserDTO;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 import java.util.Random;
@@ -75,5 +72,10 @@ public class BoardTests extends TestBase {
         logger.info("start after method ");
         if (app.getHelperBoards().isElementPresent_buttonBoards())
             app.getHelperBoards().clickButtonBoards();
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void logout(){
+        app.getHelperUser().logout();
     }
 }

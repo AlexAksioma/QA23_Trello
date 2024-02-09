@@ -45,4 +45,10 @@ public class HelperProfile extends HelperBase{
     public boolean isTextInElementPresentByWait_AvatarAdded() {
         return isTextInElementPresentByWait(popUpAvatarAdded, "Avatar added", 5);
     }
+
+    public void returnToHomePage() {
+        List<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.close();
+        driver.switchTo().window(tabs.get(0));
+    }
 }

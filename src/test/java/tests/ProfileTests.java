@@ -2,9 +2,8 @@ package tests;
 
 import manager.TestNGListener;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 @Listeners(TestNGListener.class)
 
 public class ProfileTests extends TestBase{
@@ -18,6 +17,16 @@ public class ProfileTests extends TestBase{
     public void changeAvatarPositiveTest(){
         app.getHelperProfile().changeAvatar();
         Assert.assertTrue(app.getHelperProfile().isTextInElementPresentByWait_AvatarAdded());
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void afterTest(){
+        app.getHelperProfile().returnToHomePage();
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void logout(){
+        app.getHelperUser().logout();
     }
 
 }
