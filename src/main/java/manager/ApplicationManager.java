@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.ConfigProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +38,8 @@ public class ApplicationManager {
         }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.navigate().to("https://trello.com/home");
+        //driver.navigate().to("https://trello.com/home");
+        driver.navigate().to(ConfigProperties.getProperties("url"));
         logger.info("start testing --- navigate to --->  https://trello.com/home");
         helperUser = new HelperUser(driver);
         helperBoards = new HelperBoards(driver);

@@ -8,3 +8,6 @@
 .\gradlew clean shorttest -Dsuite=positive
 
 cd C:\QA_Auto_Projects\QA_23\QA23_Trello
+
+.\gradlew clean boardtests -Ptarget=fake       //properties
+.\gradlew clean boardtests -Ptarget=fake -Pbrowser=firefox                //properties google.con and browser firefox
